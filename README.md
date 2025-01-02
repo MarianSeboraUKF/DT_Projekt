@@ -5,4 +5,4 @@ Tento repozitár obsahuje implementáciu ETL procesu v Snowflake pre analýzu d�
 ## **1. Úvod a popis zdrojových dát**
 Cieľom semestrálneho projektu je analyzovať dáta týkajúce sa kníh, používateľov a ich hodnotení. Táto analýza umožňuje identifikovať trendy v čitateľských preferenciách, najpopulárnejšie knihy a správanie používateľov.
 
-Zdrojové dáta pochádzajú z Kaggle datasetu dostupného [tu](https://edu.ukf.sk/mod/folder/view.php?id=252867). Dataset obsahuje päť hlavných tabuliek:
+Zdrojové dáta pochádzajú z Kaggle datasetu dostupného [tu](https://edu.ukf.sk/mod/folder/view.php?id=252867). Dataset obsahuje osem hlavných tabuliek:
