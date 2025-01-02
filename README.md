@@ -28,3 +28,6 @@ Surové dáta sú usporiadané v relačnom modeli, ktorý je znázornený na **e
   <br>
   <em>Obrázok 1 Entitno-relačná schéma AmazonBooks</em>
 </p>
+
+---
+## **2 Dimenzionálny model**
