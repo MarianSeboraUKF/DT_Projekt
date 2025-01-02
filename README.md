@@ -19,3 +19,6 @@ Zdrojové dáta pochádzajú z Kaggle datasetu dostupného [tu](https://edu.ukf.
 
 ---
 ### **1.1 Dátová architektúra**
+
+### **ERD diagram**
+Surové dáta sú usporiadané v relačnom modeli, ktorý je znázornený na **entitno-relačnom diagrame (ERD)**:
