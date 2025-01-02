@@ -16,3 +16,6 @@ Zdrojové dáta pochádzajú z Kaggle datasetu dostupného [tu](https://edu.ukf.
 - `users`
   
 Účelom ETL procesu bolo tieto dáta pripraviť, transformovať a sprístupniť pre viacdimenzionálnu analýzu.
+
+---
+### **1.1 Dátová architektúra**
