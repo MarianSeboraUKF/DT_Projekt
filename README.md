@@ -1,4 +1,4 @@
-# **DT_Projekt MovieLens Dataset**
+# **DT Projekt MovieLens Dataset**
 Tento repozitár obsahuje implementáciu ETL procesu v Snowflake pre analýzu dát z MovieLens datasetu. Projekt sa zameriava na filmy, žánre filmov, pozícií, hodnotení a údaje o používateľoch. Výsledný dátový model umožňuje multidimenzionálnu analýzu a vizualizáciu dát.
 
 ---
@@ -31,3 +31,5 @@ Surové dáta sú usporiadané v relačnom modeli, ktorý je znázornený na **e
 
 ---
 ## **2 Dimenzionálny model**
+
+Navrhnutý bol **hviezdicový model (star schema)**, pre efektívnu analýzu kde centrálny bod predstavuje faktová tabuľka **`fact_ratings`**, ktorá je prepojená s nasledujúcimi dimenziami:
