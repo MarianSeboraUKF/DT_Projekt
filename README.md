@@ -48,3 +48,6 @@ Navrhnutý bol **hviezdicový model (star schema)**, pre efektívnu analýzu kde
   <em>Obrázok 2 Schéma hviezdy pre MovieLens</em>
 </p>
 
+---
+## **3. ETL proces v Snowflake**
+
