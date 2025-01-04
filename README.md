@@ -109,7 +109,77 @@ FROM ratings_staging
 GROUP BY EXTRACT(HOUR FROM rated_at), EXTRACT(MINUTE FROM rated_at), EXTRACT(SECOND FROM rated_at)
 ORDER BY hour, minute, second;
 ```
+#### Dimenzia - `dim_date`: obsahuje id, dátum, deň, deň v týždni (číslom aj slovne), mesiac, rok a štrvťrok.
+```sql
+CREATE OR REPLACE TABLE dim_date AS
+SELECT
+    ROW_NUMBER() OVER (ORDER BY CAST(rated_at AS DATE)) AS ID,
+    CAST(rated_at AS DATE) AS date,
+    EXTRACT(DAY FROM rated_at) AS day,
+    MOD(EXTRACT(DOW FROM rated_at) + 1, 7) + 1 AS day_of_week,
+    CASE MOD(EXTRACT(DOW FROM rated_at) + 1, 7) + 1
+        WHEN 1 THEN 'Pondelok'
+        WHEN 2 THEN 'Utorok'
+        WHEN 3 THEN 'Streda'
+        WHEN 4 THEN 'Štvrtok'
+        WHEN 5 THEN 'Piatok'
+        WHEN 6 THEN 'Sobota'
+        WHEN 7 THEN 'Nedeľa'
+    END AS day_of_week_as_string,
+    EXTRACT(MONTH FROM rated_at) AS month,
+    EXTRACT(YEAR FROM rated_at) AS year,
+    EXTRACT(QUARTER FROM rated_at) AS quarter
+FROM (
+    SELECT DISTINCT
+        CAST(rated_at AS DATE) AS rated_at,
+        EXTRACT(DAY FROM rated_at) AS day,
+        EXTRACT(DOW FROM rated_at) AS dow,
+        EXTRACT(MONTH FROM rated_at) AS month,
+        EXTRACT(YEAR FROM rated_at) AS year,
+        EXTRACT(QUARTER FROM rated_at) AS quarter
+    FROM ratings_staging
+) unique_dates;
+```
+#### Dimenzia - `dim_movies` obsahuje id a názov filmu.
+```sql
+CREATE OR REPLACE TABLE dim_movies AS
+SELECT
+    ROW_NUMBER() OVER (ORDER BY title) AS ID,
+    title
+FROM movies_staging
+GROUP BY title;
+```
+#### Dimenzia - `dim_genres` obsahuje id a názov žánru.
+```sql
+CREATE OR REPLACE TABLE dim_genres AS
+SELECT
+    ROW_NUMBER() OVER (ORDER BY name) AS ID,
+    name
+FROM genres_staging
+GROUP BY name;
+```
+#### Dimenzia - `dim_users` obsahuje id, vekovú skupinu, pohlavie a pracovnú pozíciu.
+```sql
+CREATE OR REPLACE TABLE dim_users AS
+SELECT
+    u.id AS ID,
+    CASE 
+        WHEN u.age < 18 THEN 'Under 18'
+        WHEN u.age BETWEEN 18 AND 24 THEN '18-24'
+        WHEN u.age BETWEEN 25 AND 34 THEN '25-34'
+        WHEN u.age BETWEEN 35 AND 44 THEN '35-44'
+        WHEN u.age BETWEEN 45 AND 54 THEN '45-54'
+        WHEN u.age >= 55 THEN '55+'
+        ELSE 'Unknown'
+    END AS age_group_name,
+    u.gender,
+    o.name AS occupations_name,
+FROM USERS_STAGING u
+JOIN occupations_staging o ON u.occupation_id = o.id;
+```
 
+---
+### **3.3 Load (Načítanie dát)**
 
 ---
 
