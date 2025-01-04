@@ -69,3 +69,13 @@ CREATE OR REPLACE TABLE movies_staging (
     release_year CHAR(4)
 );
 ```
+
+Do stage boli následne nahraté súbory obsahujúce údaje o movies, users, ratings, occupations, age_group, genres, genres_movies a tags. Dáta boli importované do staging tabuliek pomocou príkazu `COPY INTO`. Pre každú tabuľku sa použil podobný príkaz:
+
+#### Kód pre nahratie a kopírovanie dát do stage tabuliek:
+Pre každú tabuľku použijeme príkaz `COPY INTO`. Príklad pre tabuľku movies_staging:
+```sql
+COPY INTO movies_staging
+FROM @scorpion_stage/movies.csv
+FILE_FORMAT = (TYPE = 'CSV' FIELD_OPTIONALLY_ENCLOSED_BY = '"' SKIP_HEADER = 1);
+```
