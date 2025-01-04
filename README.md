@@ -181,6 +181,8 @@ JOIN occupations_staging o ON u.occupation_id = o.id;
 ---
 ### **3.3 Load (Načítanie dát)**
 
+Po úspešnom vytvorení `dimenzií` a `faktovej tabuľky` môžeme staging tabuľky odstrániť:
+
 ---
 
 **Autor:** Marián Šebora
