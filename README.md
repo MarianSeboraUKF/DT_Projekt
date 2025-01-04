@@ -196,5 +196,9 @@ DROP TABLE IF EXISTS ratings_staging;
 ETL proces v Snowflake transformoval pôvodné údaje z `.csv` súborov do viacdimenzionálnej hviezdicovej štruktúry. Tento postup zahŕňal čistenie, obohatenie a reorganizáciu dát, čo umožnilo lepšiu analýzu preferencií a správania používateľov. Výsledný model slúži ako pevný základ pre tvorbu reportov a vizualizácií.
 
 ---
+## **4. Vizualizácia dát**
+
+
+---
 
 **Autor:** Marián Šebora
