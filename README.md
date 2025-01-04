@@ -183,6 +183,17 @@ JOIN occupations_staging o ON u.occupation_id = o.id;
 
 Po úspešnom vytvorení `dimenzií` a `faktovej tabuľky` môžeme staging tabuľky odstrániť:
 
+```sql
+DROP TABLE IF EXISTS age_group_staging;
+DROP TABLE IF EXISTS occupations_staging;
+DROP TABLE IF EXISTS users_staging;
+DROP TABLE IF EXISTS movies_staging;
+DROP TABLE IF EXISTS genres_staging;
+DROP TABLE IF EXISTS genres_movies_staging;
+DROP TABLE IF EXISTS tags_staging;
+DROP TABLE IF EXISTS ratings_staging;
+```
+
 ---
 
 **Autor:** Marián Šebora
