@@ -60,3 +60,12 @@ Dáta (formát `.csv`) najprv nahráme do Snowflake pomocou interného stage úl
 ```sql
 CREATE OR REPLACE STAGE scorpion_stage;
 ```
+
+#### Kód pre vytvorenie stage tabuľky:
+```sql
+CREATE OR REPLACE TABLE movies_staging (
+    id INT PRIMARY KEY,
+    title VARCHAR(255),
+    release_year CHAR(4)
+);
+```
