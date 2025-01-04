@@ -109,3 +109,8 @@ FROM ratings_staging
 GROUP BY EXTRACT(HOUR FROM rated_at), EXTRACT(MINUTE FROM rated_at), EXTRACT(SECOND FROM rated_at)
 ORDER BY hour, minute, second;
 ```
+
+
+---
+
+**Autor:** Marián Šebora
