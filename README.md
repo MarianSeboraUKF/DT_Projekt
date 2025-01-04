@@ -198,6 +198,7 @@ ETL proces v Snowflake transformoval pôvodné údaje z `.csv` súborov do viacd
 ---
 ## **4. Vizualizácia dát**
 
+Dashboard ponúka `šesť` vizualizácií, ktoré poskytujú prehľad o hlavných metrikách a trendoch súvisiacich s knihami, používateľmi a hodnoteniami. Tieto grafy odpovedajú na kľúčové otázky a pomáhajú detailnejšie analyzovať správanie používateľov a ich preferencie.
 
 ---
 
