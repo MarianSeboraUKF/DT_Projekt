@@ -54,4 +54,9 @@ ETL proces pozostával z troch kľúčových fáz: `extrakcie` (Extract), `trans
 
 ---
 ### **3.1 Extract (Extrahovanie dát)**
-Dáta najprv nahráme do Snowflake pomocou interného stage úložiska my_stage, odkiaľ sa následne importujú do staging tabuliek.
+Dáta (formát `.csv`) najprv nahráme do Snowflake pomocou interného stage úložiska my_stage, odkiaľ sa následne importujú do staging tabuliek.
+
+#### Kód pre vytvorenie stage-u:
+```sql
+CREATE OR REPLACE STAGE scorpion_stage;
+```
