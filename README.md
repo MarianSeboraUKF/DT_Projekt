@@ -86,3 +86,26 @@ Pri výskyte nekonzistentných záznamov bol použitý parameter `ON_ERROR = 'CO
 V tejto etape sa vytvárajú dimenzie a faktová tabuľka. Dimenzie slúžia na poskytovanie kontextu, zatiaľ čo faktová tabuľka obsahuje hlavné metriky a údaje na analýzu.
 
 ### Vytvorenie jednotlivých dimenzií:
+
+#### Dimenzia - `dim_tags`: obsahuje id určitého tag-u a názov tag-u.
+```sql
+CREATE OR REPLACE TABLE dim_tags AS
+SELECT
+    ROW_NUMBER() OVER (ORDER BY tags) AS ID,
+    tags
+FROM tags_staging
+GROUP BY tags;
+```
+
+#### Dimenzia - `dim_time`: obsahuje id a údaje o hodinách, minútach a sekundách.
+```sql
+CREATE OR REPLACE TABLE dim_time AS
+SELECT
+    ROW_NUMBER() OVER (ORDER BY EXTRACT(HOUR FROM rated_at), EXTRACT(MINUTE FROM rated_at)) AS ID,
+    EXTRACT(HOUR FROM rated_at) AS hour,
+    EXTRACT(MINUTE FROM rated_at) AS minute,
+    EXTRACT(SECOND FROM rated_at) AS second
+FROM ratings_staging
+GROUP BY EXTRACT(HOUR FROM rated_at), EXTRACT(MINUTE FROM rated_at), EXTRACT(SECOND FROM rated_at)
+ORDER BY hour, minute, second;
+```
