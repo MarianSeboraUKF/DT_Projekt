@@ -85,4 +85,4 @@ Pri výskyte nekonzistentných záznamov bol použitý parameter `ON_ERROR = 'CO
 ### **3.2 Transfor (Transformácia dát)**
 V tejto etape sa vytvárajú dimenzie a faktová tabuľka. Dimenzie slúžia na poskytovanie kontextu, zatiaľ čo faktová tabuľka obsahuje hlavné metriky a údaje na analýzu.
 
-## Vytvorenie jednotlivých dimenzií:
+### Vytvorenie jednotlivých dimenzií:
