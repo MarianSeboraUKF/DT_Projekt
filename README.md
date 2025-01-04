@@ -82,4 +82,4 @@ FILE_FORMAT = (TYPE = 'CSV' FIELD_OPTIONALLY_ENCLOSED_BY = '"' SKIP_HEADER = 1);
 Pri výskyte nekonzistentných záznamov bol použitý parameter `ON_ERROR = 'CONTINUE'`, ktorý zabezpečil, že proces pokračoval bez prerušenia napriek chybám.
 
 ---
-### **3.1 Transfor (Transformácia dát)**
+### **3.2 Transfor (Transformácia dát)**
