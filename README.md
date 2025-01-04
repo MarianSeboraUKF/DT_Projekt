@@ -178,6 +178,32 @@ FROM USERS_STAGING u
 JOIN occupations_staging o ON u.occupation_id = o.id;
 ```
 
+#### Vytvorenie Fakt. Tabuľky `fact_ratings`. 
+```sql
+CREATE OR REPLACE TABLE fact_ratings AS
+SELECT 
+    r.id AS ID,
+    r.rating,
+    du.ID AS dim_users_ID,
+    dt.ID AS dim_tags_ID,
+    dm.ID AS dim_movies_ID,
+    dg.ID AS dim_genres_ID,
+    dtime.ID AS dim_time_ID,
+    ddate.ID AS dim_date_ID
+FROM ratings_staging r
+JOIN dim_users du ON r.user_id = du.ID
+JOIN dim_movies dm ON r.movie_id = dm.ID
+LEFT JOIN tags_staging ts ON r.user_id = ts.user_id AND r.movie_id = ts.movie_id
+LEFT JOIN dim_tags dt ON ts.tags = dt.tags
+JOIN genres_movies_staging gm ON r.movie_id = gm.movie_id
+JOIN dim_genres dg ON gm.genre_id = dg.ID
+JOIN dim_time dtime 
+    ON EXTRACT(HOUR FROM r.rated_at) = dtime.hour
+   AND EXTRACT(MINUTE FROM r.rated_at) = dtime.minute
+   AND EXTRACT(SECOND FROM r.rated_at) = dtime.second
+JOIN dim_date ddate ON CAST(r.rated_at AS DATE) = ddate.date;
+```
+
 ---
 ### **3.3 Load (Načítanie dát)**
 
