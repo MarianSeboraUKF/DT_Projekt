@@ -227,7 +227,7 @@ ETL proces v Snowflake transformoval pôvodné údaje z `.csv` súborov do viacd
 Dashboard ponúka `päť vizualizácií`, ktoré poskytujú prehľad o hlavných metrikách a trendoch súvisiacich s filmami, žánrami, používateľmi a hodnoteniami. Tieto grafy odpovedajú na kľúčové otázky a pomáhajú detailnejšie analyzovať správanie používateľov a ich preferencie.
 
 <p align="center">
-  <img src="" alt="Diagramy">
+  <img src="Scorpion Dashboard_vizualizácia.png" alt="Diagramy">
   <br>
   <em>Obrázok 3 Päť diagramov/grafov MovieLens Datasetu</em>
 </p>
