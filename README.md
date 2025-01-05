@@ -262,6 +262,19 @@ LIMIT 10;
 ```
 ---
 
+### **Graf 3: Najaktívnejší používatelia (TOP 10)**
+Vizualizácia ukazuje 10 používateľov pod ich `USER_ID` a ďalej nám ukazuje aj RATING_COUNT, tzv. koľko rating-ov uverejnili. Najaktívnejčí používateľ s `id 4169` a `rating_count 3956`.
+
+```sql
+-- 3. SQL Dotaz pre najaktívnejších používateľov (TOP 10)
+SELECT fr.dim_users_id AS user_id, COUNT(fr.id) AS rating_count
+FROM fact_ratings AS fr
+GROUP BY fr.dim_users_id
+ORDER BY rating_count DESC
+LIMIT 10;
+```
+---
+
 
 ---
 
