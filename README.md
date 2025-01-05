@@ -234,7 +234,7 @@ Dashboard ponúka `päť vizualizácií`, ktoré poskytujú prehľad o hlavných
 
 ---
 ### **Graf 1: Počet hodnotení podľa žánru (TOP 10)**
-Vizualizácia ukazuje počet hodnotení pre jednotlivé žánre, pričom najviac hodnotení má Comedy (352,625) a najmenej Children's (72,151) z TOP 10. Graf odhaľuje preferencie používateľov podľa žánrov a pomáha identifikovať najpopulárnejšie kategórie filmov.
+Vizualizácia ukazuje počet hodnotení pre jednotlivé žánre, pričom najviac hodnotení má `Comedy (352,625)` a najmenej `Children's (72,151)` z TOP 10. Graf odhaľuje preferencie používateľov podľa žánrov a pomáha identifikovať najpopulárnejšie kategórie filmov.
 
 ```sql
 -- 1. SQL Dotaz pre počet hodnotení podľa žánru (TOP 10)
