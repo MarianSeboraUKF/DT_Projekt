@@ -288,4 +288,18 @@ ORDER BY day ASC;
 ```
 ---
 
+### **Graf 5: Počet hodnotení podľa povolaní (TOP 10)**
+Táto vizualizácia zobrazuje koľko ľudí s daným povolaním hodnotilo filmy.
+
+```sql
+-- 5. SQL Dotaz pre počet hodnotení podľa povolaní (TOP 10)
+SELECT u.occupations_name AS occupation, COUNT(r.id) AS total_ratings
+FROM fact_ratings AS r
+JOIN dim_users AS u ON r.dim_users_id = u.id
+GROUP BY  u.occupations_name
+ORDER BY total_ratings DESC
+LIMIT 10;
+```
+
+---
 **Autor:** Marián Šebora
