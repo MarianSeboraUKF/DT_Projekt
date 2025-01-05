@@ -265,4 +265,4 @@ FROM fact_ratings AS r
 JOIN dim_users AS u ON r.dim_users_id = u.id
 GROUP BY  u.occupations_name
 ORDER BY total_ratings DESC
-LIMIT 10
+LIMIT 10;
