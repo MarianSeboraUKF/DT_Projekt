@@ -245,6 +245,23 @@ GROUP BY dg.name
 ORDER BY rating_count DESC
 LIMIT 10;
 ```
+---
+
+### **Graf 2: Najobľúbenejšie filmy (TOP 10)**
+Vizualizácia ukazuje 10 najobľúbenejších filmov podľa priemerného hodnotenia, kde napríklad `„$1,000,000 Duck (1971)“` dosahuje najvyššie skóre. Graf porovnáva priemerné hodnotenia medzi týmito filmami, pričom pomáha identifikovať filmy s najvyššou preferenciou používateľov.
+
+```sql
+-- 2. SQL Dotaz pre najobľúbenejšie filmy (TOP 10)
+SELECT m.title, ROUND(AVG(fr.rating), 2) AS avg_rating, COUNT(fr.id) AS rating_count
+FROM fact_ratings AS fr
+JOIN dim_movies AS m ON fr.dim_movies_id = m.id
+GROUP BY  m.title
+HAVING COUNT(fr.id) >= 30
+ORDER BY title
+LIMIT 10;
+```
+---
+
 
 ---
 
