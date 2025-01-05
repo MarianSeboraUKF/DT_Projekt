@@ -301,7 +301,7 @@ ORDER BY total_ratings DESC
 LIMIT 10;
 ```
 
-Dashboard poskytuje komplexný prehľad o dátach, pričom sa zameriava na dôležité otázky týkajúce sa preferencií a hodnotení filmov. Vizualizácie uľahčujú interpretáciu informácií a môžu byť využité na zlepšenie odporúčacích algoritmov, marketingových stratégií a filmových knižníc.
+Dashboard ponúka detailný pohľad na dáta, pričom sa sústreďuje na analýzu hodnotení a preferencií filmov. Vizualizácie umožňujú lepšie pochopenie trendov a môžu prispieť k optimalizácii odporúčacích systémov, propagácie a správy filmových databáz.
 
 ---
 **Autor:** Marián Šebora
