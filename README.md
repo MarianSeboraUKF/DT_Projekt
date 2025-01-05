@@ -275,7 +275,17 @@ LIMIT 10;
 ```
 ---
 
+### **Graf 4: Aktivita počas dní v týždni (7 dní)**
+Táto vizualizácia zobrazuje 7 dní v týždni a celkový rating `TOTAL_RATINGS`. Najviac ratingov bolo v `Stredu` a bolo to presne `358299`.
 
+```sql
+-- 4. SQL Dotaz pre aktivitu počas dni v týždni (7 dní)
+SELECT d.day_of_week AS day, COUNT(r.id) AS total_ratings
+FROM fact_ratings AS r
+JOIN dim_date AS d ON r.dim_date_id = d.id
+GROUP BY d.day_of_week
+ORDER BY day ASC;
+```
 ---
 
 **Autor:** Marián Šebora
