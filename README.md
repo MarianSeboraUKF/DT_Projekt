@@ -226,6 +226,12 @@ ETL proces v Snowflake transformoval pôvodné údaje z `.csv` súborov do viacd
 
 Dashboard ponúka `šesť vizualizácií`, ktoré poskytujú prehľad o hlavných metrikách a trendoch súvisiacich s knihami, používateľmi a hodnoteniami. Tieto grafy odpovedajú na kľúčové otázky a pomáhajú detailnejšie analyzovať správanie používateľov a ich preferencie.
 
+<p align="center">
+  <img src="" alt="Diagramy">
+  <br>
+  <em>Obrázok 3 Šesť diagramov/grafov MovieLens Datasetu</em>
+</p>
+
 ---
 
 **Autor:** Marián Šebora
