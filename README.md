@@ -26,7 +26,7 @@ Surové dáta sú usporiadané v relačnom modeli, ktorý je znázornený na **e
 <p align="center">
   <img src="MovieLens_ERD.png" alt="ERD Schema">
   <br>
-  <em>Obrázok 1 Entitno-relačná schéma AmazonBooks</em>
+  <em>Obrázok 1 Entitno-relačná schéma MovieLens</em>
 </p>
 
 ---
